@@ -1,0 +1,8 @@
+/* Empty. Add your own CSS if you like */
+.filterFalse {
+    visibility:hidden;
+}
+
+.filterTrue {
+    visibility:visible;
+}
