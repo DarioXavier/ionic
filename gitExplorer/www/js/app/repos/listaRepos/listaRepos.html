@@ -1,0 +1,42 @@
+<!--
+<style>
+  .filterFalse {
+      visibility:hidden;
+  }
+
+  .filterTrue {
+      visibility:visible;
+  }
+</style>
+-->
+
+<ion-view ng-controller="reposCtrl as reposCtrl" view-title="Search: {{reposCtrl.userName}}">
+  <ion-content>
+      <ion-list>
+
+        <ion-item>
+
+          <div class="item-input-inset filterFalse" ng-class="{filterTrue:reposCtrl.existInfo}">
+            <label class="item item-input item-input-wrapper">
+              <input type="text" placeholder="Repo" ng-model="reposCtrl.repoName">
+            </label>
+            <button class="button button-outline button-calm button-small icon ion-funnel" ng-click="reposCtrl.filterRepos()"></button>
+          </div>
+
+          <div class="list">
+            <div class="item item-divider">
+              Repos
+            </div>
+
+            <a class="item" href="#/repo/{{repo.name}}/{{repo.id}}" ng-repeat="repo in reposCtrl.userRepos | filter:reposCtrl.repoName">
+              <h2>{{repo.name}} <span class="item-note">{{repo.public}}</span></h2>
+              <p>{{repo.full_name}}</p>
+            </a>
+          </div>
+        </ion-item>
+
+      </ion-list>
+
+    </ion-content>
+
+</ion-view>
