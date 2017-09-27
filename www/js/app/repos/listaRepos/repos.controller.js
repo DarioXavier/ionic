@@ -77,7 +77,7 @@
 
         function addFavoritos(ownerData) {
             console.log('ownerData',ownerData);
-            var userData = {login: ownerData.login, html_url: ownerData.html_url, score: 0};
+            var userData = {login: ownerData.login, html_url: ownerData.html_url};
             favoritosSrvc.addFavoritos(userData);
         }
     }

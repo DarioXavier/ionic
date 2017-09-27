@@ -9,7 +9,7 @@
 
         <div class="list card">
 
-          <a href="#" class="item item-body">
+          <a class="item item-body">
             <h2>{{repoCtrl.repoData.name}}</h2>
             <p>{{repoCtrl.repoData.description}}</p>
               <div class="row">
@@ -21,27 +21,27 @@
               </div>
           </a>
         
-          <a href="#" class="item item-icon-left">
+          <a class="item item-icon-left">
             <i class="icon ion-ios-timer-outline"></i>
             <p>Commits: {{repoCtrl.repoData.commits.length}}</p>
           </a>
         
-          <a href="#" class="item item-icon-left">
+          <a class="item item-icon-left">
             <i class="icon ion-ios-people-outline"></i>
             <p>Contributors: {{repoCtrl.repoData.contributors.length}}</p>
           </a>
 
-          <a href="#" class="item item-icon-left">
+          <a class="item item-icon-left">
               <i class="icon ion-ios-cloud-download-outline"></i>
               <p>Clone: {{repoCtrl.repoData.clone_url}}</p>
           </a>
 
-          <a href="#" class="item item-icon-left">
+          <a class="item item-icon-left">
               <i class="icon ion-usb"></i>
               <p>Branches: {{repoCtrl.repoData.branches.length}}</p>
           </a>
 
-          <a href="#" class="item item-icon-left">
+          <a class="item item-icon-left">
               <p class="" ng-repeat="branch in repoCtrl.repoData.branches">
                 {{branch.name}}
               </p>

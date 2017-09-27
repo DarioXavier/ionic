@@ -22,27 +22,24 @@
                 <input type="text" placeholder="Filtrar" ng-model="reposCtrl.repoName">
               </label>
           </div>
-
-          <div class="list">
-            <div class="item item-divider">
-              Repos
-            </div>
-
-            <a class="item" href="#/app/repo/{{repo.owner.login}}/{{repo.name}}" ng-repeat="repo in reposCtrl.userRepos | filter:reposCtrl.repoName">
-              <h2>{{repo.name}} <span class="item-note">{{repo.public}}</span></h2>
-              <p>{{repo.full_name}}</p>
-            </a>
-          </div>
         </ion-item>
 
       </ion-list>
 
-    </ion-content>
+        <ion-list>
+          <ion-item ng-repeat="repo in reposCtrl.userRepos | filter:reposCtrl.repoName" item="item" href="#/app/repo/{{repo.owner.login}}/{{repo.name}}">
+            <img ng-src="{{user.avatar_url}}">
+            <h2>{{repo.name}} <span class="item-note">{{repo.public}}</span></h2>
+            <p>{{repo.full_name}}</p>
+          </ion-item>
+        </ion-list>
 
-    <ion-footer-bar class="bar-stable button-bar">
-        <button class="button button-outline button-dark icon ion-pizza" ng-click="reposCtrl.addFavoritos(reposCtrl.userRepos[0].owner)">
-          Add Favoritos
-        </button>
+    </ion-content>
+    
+    <ion-footer-bar class="bar-stable">
+      <button class="button button-outline button-dark button-block icon ion-pizza" style="margin: 0px 0px 0px 0px; font-size: 1.2rem;" ng-click="reposCtrl.addFavoritos(reposCtrl.userRepos[0].owner)">
+        Add Favoritos
+      </button>
     </ion-footer-bar>
 
 </ion-view>

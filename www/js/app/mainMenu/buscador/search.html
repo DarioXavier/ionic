@@ -17,8 +17,8 @@
         <ion-item>
           <div class="list list-inset">
               <label class="item item-input">
-                  <i class="icon ion-funnel ion-ios-search"></i>
-                  <input type="text" placeholder="Nombre de Usuario" ng-model="buscadorCtrl.userName">
+                <i class="icon ion-funnel ion-ios-search"></i>
+                <input type="text" placeholder="Nombre de Usuario" ng-model="buscadorCtrl.userName">
               </label>
 
               <label class="item item-input filterFalse" ng-class="{filterTrue:buscadorCtrl.existInfo}">
@@ -27,25 +27,22 @@
               </label>
           </div>
         </ion-item>
-
-          <div class="list">
-            <div class="item item-divider">
-              Usuarios
-            </div>
-
-            <a class="item" href="#/app/repos/{{user.login}}" ng-repeat="user in buscadorCtrl.usersList | filter:buscadorCtrl.repoName">
-              <h2>{{user.login}} <span class="item-note">Score: {{user.score}}</span></h2>
-              <p>{{user.html_url}}</p>
-            </a>
-          </div>
         
+        <ion-list>
+          <ion-item ng-repeat="user in buscadorCtrl.usersList | filter:buscadorCtrl.repoName" item="item" href="#/app/repos/{{user.login}}" class="item-avatar">
+            <img ng-src="{{user.avatar_url}}">
+            <h2>{{user.login}}
+              <!--<span class="item-note">Score: {{user.score}}</span>-->
+            </h2>
+            <p>{{user.html_url}}</p>
+          </ion-item>
+        </ion-list>
 
       </ion-list>
-
     </ion-content>
 
-    <ion-footer-bar class="bar-stable button-bar">
-      <button class="button button-outline button-dark icon ion-ios-search" ng-click="buscadorCtrl.searchGitUsers()">
+    <ion-footer-bar class="bar-stable">
+      <button class="button button-outline button-dark button-block icon ion-ios-search" style="margin: 0px 0px 0px 0px; font-size: 1.2rem;" ng-click="buscadorCtrl.searchGitUsers()">
         Buscar
       </button>
     </ion-footer-bar>
