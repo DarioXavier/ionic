@@ -1,13 +1,53 @@
-<ion-view ng-controller="repoCtrl as repoCtrl" view-title="Favorites">
+<ion-view ng-controller="repoCtrl as repoCtrl" view-title="Detalles del repo">
   <ion-content>
 
     
       <div class="list">
         <div class="item item-divider">
-          Repo 
+          <h3>Repo: {{repoCtrl.repoData.owner.login}}/{{repoCtrl.repoData.name}}</h3>
         </div>
 
+        <div class="list card">
+
+          <a href="#" class="item item-body">
+            <h2>{{repoCtrl.repoData.name}}</h2>
+            <p>{{repoCtrl.repoData.description}}</p>
+              <div class="row">
+                  <span class="col ion-ios-paper-outline"><h5>{{repoCtrl.repoData.language}}</h5></span>
+                  <span class="col ion-ios-folder-outline"><h5>{{repoCtrl.repoData.size}} MB</h5></span>
+                  <span class="col ion-ios-person-outline"><h5>{{repoCtrl.repoData.public}}</h5></span>
+                  <span class="col ion-ios-eye-outline"><h5>{{repoCtrl.repoData.watchers}}</h5></span>
+                  <span class="col ion-fork-repo"><h5>{{repoCtrl.repoData.forks}}</h5></span>
+              </div>
+          </a>
         
+          <a href="#" class="item item-icon-left">
+            <i class="icon ion-ios-timer-outline"></i>
+            <p>Commits: {{repoCtrl.repoData.commits.length}}</p>
+          </a>
+        
+          <a href="#" class="item item-icon-left">
+            <i class="icon ion-ios-people-outline"></i>
+            <p>Contributors: {{repoCtrl.repoData.contributors.length}}</p>
+          </a>
+
+          <a href="#" class="item item-icon-left">
+              <i class="icon ion-ios-cloud-download-outline"></i>
+              <p>Clone: {{repoCtrl.repoData.clone_url}}</p>
+          </a>
+
+          <a href="#" class="item item-icon-left">
+              <i class="icon ion-usb"></i>
+              <p>Branches: {{repoCtrl.repoData.branches.length}}</p>
+          </a>
+
+          <a href="#" class="item item-icon-left">
+              <p class="" ng-repeat="branch in repoCtrl.repoData.branches">
+                {{branch.name}}
+              </p>
+          </a>
+          
+        </div>
 
       </div>
 

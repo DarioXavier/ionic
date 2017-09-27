@@ -12,23 +12,19 @@
 
 <ion-view ng-controller="buscadorCtrl as buscadorCtrl" view-title="Search: {{buscadorCtrl.userName}}">
   <ion-content>
-      <ion-list>
+      <ion-list>   
 
         <ion-item>
-          <div class="list">
-            <label class="item item-input item-input-wrapper">
-              <input type="text" placeholder="Nombre de Usuario" ng-model="buscadorCtrl.userName">
-            </label>
-          </div>
-        </ion-item>      
+          <div class="list list-inset">
+              <label class="item item-input">
+                  <i class="icon ion-funnel ion-ios-search"></i>
+                  <input type="text" placeholder="Nombre de Usuario" ng-model="buscadorCtrl.userName">
+              </label>
 
-        <ion-item>
-
-          <div class="item-input-inset filterFalse" ng-class="{filterTrue:buscadorCtrl.existInfo}">
-            <label class="item item-input item-input-wrapper">
-              <input type="text" placeholder="User" ng-model="buscadorCtrl.repoName">
-            </label>
-            <button class="button button-outline button-calm button-small icon ion-funnel" ng-click="buscadorCtrl.filterRepos()"></button>
+              <label class="item item-input filterFalse" ng-class="{filterTrue:buscadorCtrl.existInfo}">
+                <i class="icon ion-funnel placeholder-icon"></i>
+                <input type="text" placeholder="Filtrar" ng-model="buscadorCtrl.repoName">
+              </label>
           </div>
         </ion-item>
 

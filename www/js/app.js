@@ -10,7 +10,8 @@ angular.module('starter',[
   'buscadorMdle',
   'favoritosMdle',
   'reposMdle',
-  'repoMdle'
+  'repoMdle',
+  'homeMdle'
 ])
 
 .run(function($ionicPlatform) {
@@ -36,8 +37,8 @@ angular.module('starter',[
       url: '/app',
       abstract: true,
       templateUrl: 'templates/menu.html',
-      controller: 'AppCtrl'
+      //controller: 'AppCtrl'
     })
   
-  //$urlRouterProvider.otherwise('/app/search');
+  $urlRouterProvider.otherwise('/app/home');
 });

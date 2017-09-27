@@ -26,9 +26,6 @@
             console.log('repoCtrl.userName', repoCtrl.userName);
             console.log('repoCtrl.repoName', repoCtrl.repoName);
             getUserRepo();
-            getRepoContributors ();
-            //getRepoBranches();
-            //getRepoCommits();
         }
 
 
@@ -40,7 +37,7 @@
                         console.log('getUserRepo', resp);
                         repoCtrl.repoData = resp;
                         isPrivate();
-                        console.log('repoCtrl.repoData', repoCtrl.repoData);
+                        getRepoContributors();
                     })
             }
         }
@@ -49,7 +46,7 @@
         function isPrivate() {
 
             if (repoCtrl.repoData.private == false){
-                repoCtrl.repoData.public = 'publico'
+                repoCtrl.repoData.public = 'público'
             } else {
                 repoCtrl.repoData.public = 'privado'
             }
@@ -57,18 +54,17 @@
 
 
         function getRepoContributors() {
-            repoCtrl.repoData.contributors
 
             if(repoCtrl.userName != undefined && repoCtrl.userName != "") {
                 repoSrvc.getRepoContributors(repoCtrl.userName, repoCtrl.repoName)
                     .then(function(resp){
                         console.log('getRepoContributors', resp);
-                        repoCtrl.repoData.contributors = 'resp';
-                        console.log('repoCtrl.userRepo.contributors', repoCtrl.userRepo.contributors);
+                        repoCtrl.repoData.contributors = resp;
+                        getRepoBranches();
                     })
             }
         }
-/*
+
 
         function getRepoBranches() {
 
@@ -77,7 +73,7 @@
                     .then(function(resp){
                         console.log('getRepoBranches', resp);
                         repoCtrl.repoData.branches = resp;
-                        console.log('repoCtrl.userRepo.branches', repoCtrl.userRepo.branches);
+                        getRepoCommits();
                     })
             }
         }
@@ -90,11 +86,11 @@
                     .then(function(resp){
                         console.log('getRepoCommits', resp);
                         repoCtrl.repoData.commits = resp;
-                        console.log('repoCtrl.userRepo.commits', repoCtrl.userRepo.commits);
+                        console.log('repoCtrl.repoData', repoCtrl.repoData);
                     })
             }
         }
-*/
+
 
     }
 })();

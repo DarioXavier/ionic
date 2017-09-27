@@ -67,7 +67,7 @@
 
             angular.forEach(reposCtrl.userRepos, function(repo) {
                 if (repo.private == false){
-                    repo.public = 'publico'
+                    repo.public = 'público'
                 } else {
                     repo.public = 'privado'
                 }

@@ -10,17 +10,17 @@
 </style>
 -->
 
-<ion-view ng-controller="reposCtrl as reposCtrl" view-title="Search: {{reposCtrl.userName}}">
+<ion-view ng-controller="reposCtrl as reposCtrl" view-title="Repos: {{reposCtrl.userName}}">
   <ion-content>
       <ion-list>
 
         <ion-item>
 
-          <div class="item-input-inset filterFalse" ng-class="{filterTrue:reposCtrl.existInfo}">
-            <label class="item item-input item-input-wrapper">
-              <input type="text" placeholder="Repo" ng-model="reposCtrl.repoName">
-            </label>
-            <button class="button button-outline button-calm button-small icon ion-funnel" ng-click="reposCtrl.filterRepos()"></button>
+          <div class="list list-inset"  ng-class="{filterTrue:reposCtrl.existInfo}">
+              <label class="item item-input">
+                <i class="icon ion-funnel placeholder-icon"></i>
+                <input type="text" placeholder="Filtrar" ng-model="reposCtrl.repoName">
+              </label>
           </div>
 
           <div class="list">
