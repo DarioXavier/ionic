@@ -1,0 +1,17 @@
+<ion-view ng-controller="favoritosCtrl as favoritosCtrl" view-title="Favorites">
+  <ion-content>
+
+    
+      <div class="list">
+        <div class="item item-divider">
+          Usuarios
+        </div>
+
+        <a class="item" href="#/app/repos/{{user.login}}" ng-repeat="user in favoritosCtrl.favoriteUsers">
+          <h2>{{user.login}} <span class="item-note">Score: {{user.score}}</span></h2>
+            <p>{{user.html_url}}</p>
+          </a>
+      </div>
+
+  </ion-content>
+</ion-view>
