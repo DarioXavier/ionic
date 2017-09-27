@@ -5,9 +5,9 @@
         .module('reposMdle')
         .controller('reposCtrl', reposCtrl);
 
-    reposCtrl.$inject = ['reposSrvc', '$stateParams'];
+    reposCtrl.$inject = ['reposSrvc', '$stateParams', 'favoritosSrvc'];
 
-    function reposCtrl(reposSrvc, $stateParams) {
+    function reposCtrl(reposSrvc, $stateParams, favoritosSrvc) {
         var reposCtrl = this;
         reposCtrl.userName = $stateParams.login;
         //reposCtrl.userName = reposCtrl.userName;
@@ -17,6 +17,7 @@
 
         reposCtrl.searchUserRepos = searchUserRepos;
         reposCtrl.filterRepos = filterRepos;
+        reposCtrl.addFavoritos = addFavoritos;
 
         console.log('$stateParams', $stateParams.login);
 
@@ -72,6 +73,12 @@
                     repo.public = 'privado'
                 }
             });
+        }
+
+        function addFavoritos(ownerData) {
+            console.log('ownerData',ownerData);
+            var userData = {login: ownerData.login, html_url: ownerData.html_url, score: 0};
+            favoritosSrvc.addFavoritos(userData);
         }
     }
 })();

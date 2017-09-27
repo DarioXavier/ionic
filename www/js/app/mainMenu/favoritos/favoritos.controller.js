@@ -10,7 +10,9 @@
     function favoritosCtrl(favoritosSrvc) {
 
         var favoritosCtrl = this;
-        favoritosCtrl.favoriteUsers = favoritosSrvc.favoriteUsers;;
+        favoritosCtrl.favoriteUsers = favoritosSrvc.favoriteUsers;
+
+        favoritosCtrl.removeFavoritos = removeFavoritos;
         
         console.log('favoritosCtrl.favoriteUsers', favoritosCtrl.favoriteUsers);
 
@@ -18,6 +20,11 @@
 
         function init() {
             
+        }
+
+        function removeFavoritos(userData) {
+            console.log('userData',userData);
+            favoritosSrvc.removeFavoritos(userData);
         }
     }
 })();

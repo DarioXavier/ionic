@@ -17,7 +17,37 @@
         ];
 
         return {
-            favoriteUsers: favoriteUsers
+            favoriteUsers: favoriteUsers,
+
+            addFavoritos: addFavoritos,
+            removeFavoritos: removeFavoritos
+        }
+
+        function addFavoritos(userData) {
+            console.log('userData',userData);
+            if (exisistUser(userData.login) == false) {
+                console.log('exisistUser',exisistUser(userData.login));
+                favoriteUsers.unshift(userData);
+            }
+        }
+
+        function exisistUser(userLogin) {
+            var exisist = false
+
+            angular.forEach(favoriteUsers, function(user) {
+                if (user.login == userLogin){
+                     console.log('igual');
+                     exisist = true;
+                }
+            });
+            return exisist
+        }
+
+        function removeFavoritos(userData) {
+            console.log('userData',userData);
+            var index = favoriteUsers.indexOf(userData);
+            console.log('index', index);
+            favoriteUsers.splice(index, 1);
         }
     }
 })();

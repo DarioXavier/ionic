@@ -7,10 +7,16 @@
           Usuarios
         </div>
 
-        <a class="item" href="#/app/repos/{{user.login}}" ng-repeat="user in favoritosCtrl.favoriteUsers">
-          <h2>{{user.login}} <span class="item-note">Score: {{user.score}}</span></h2>
+        <div class="item item-button-right" ng-repeat="user in favoritosCtrl.favoriteUsers">
+          <a class=""  href="#/app/repos/{{user.login}}">
+            <h2>{{user.login}} <span class="item-note">Score: {{user.score}}</span></h2>
             <p>{{user.html_url}}</p>
-        </a>
+          </a>
+
+          <button class="button" ng-click="favoritosCtrl.removeFavoritos({{user}})">
+              <i class="icon ion-bug"></i>
+          </button>
+        </div>        
       </div>
 
   </ion-content>
