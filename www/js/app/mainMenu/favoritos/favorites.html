@@ -3,11 +3,12 @@
 
       <ion-list show-delete="data.showDelete">
 
-        <ion-item ng-repeat="user in favoritosCtrl.favoriteUsers" item="item" href="#/app/repos/{{user.login}}" class="item-remove-animate">
+        <ion-item ng-repeat="user in favoritosCtrl.favoriteUsers track by $index" item="item" href="#/app/repos/{{user.login}}" class="item-remove-animate item-avatar">
+          <img ng-src="{{user.avatar_url}}">
           <h2>{{user.login}}
           <p>{{user.html_url}}</p>
          
-          <ion-option-button class="button-dark button-outline" ng-click="favoritosCtrl.removeFavoritos({{user}})">
+          <ion-option-button class="button-dark button-outline" ng-click="favoritosCtrl.removeFavoritos(user)">
             <i class="icon ion-bug"></i>
           </ion-option-button>
         </ion-item>

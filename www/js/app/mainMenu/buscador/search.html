@@ -31,9 +31,7 @@
         <ion-list>
           <ion-item ng-repeat="user in buscadorCtrl.usersList | filter:buscadorCtrl.repoName" item="item" href="#/app/repos/{{user.login}}" class="item-avatar">
             <img ng-src="{{user.avatar_url}}">
-            <h2>{{user.login}}
-              <!--<span class="item-note">Score: {{user.score}}</span>-->
-            </h2>
+            <h2>{{user.login}}</h2>
             <p>{{user.html_url}}</p>
           </ion-item>
         </ion-list>
