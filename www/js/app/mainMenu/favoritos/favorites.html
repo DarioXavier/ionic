@@ -1,13 +1,16 @@
-<ion-view ng-controller="favoritosCtrl as favoritosCtrl" view-title="Favorites">
+<ion-view ng-controller="favoritosCtrl as favoritosCtrl" view-title="Favoritos">
   <ion-content>
 
       <ion-list show-delete="data.showDelete">
 
-        <ion-item ng-repeat="user in favoritosCtrl.favoriteUsers track by $index" item="item" href="#/app/repos/{{user.login}}" class="item-remove-animate item-avatar">
+        <ion-item ng-repeat="user in favoritosCtrl.favoriteUsers track by $index" item="item" href="#/app/repos/{{user.login}}" class="item-remove-animate">
+          <!--
           <img ng-src="{{user.avatar_url}}">
           <h2>{{user.login}}
           <p>{{user.html_url}}</p>
-         
+          -->
+            <user-list-drctv>
+            </user-list-drctv>
           <ion-option-button class="button-dark button-outline" ng-click="favoritosCtrl.removeFavoritos(user)">
             <i class="icon ion-bug"></i>
           </ion-option-button>

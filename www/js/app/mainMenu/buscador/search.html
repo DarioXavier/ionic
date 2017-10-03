@@ -29,10 +29,14 @@
         </ion-item>
         
         <ion-list>
-          <ion-item ng-repeat="user in buscadorCtrl.usersList | filter:buscadorCtrl.repoName" item="item" href="#/app/repos/{{user.login}}" class="item-avatar">
+          <ion-item ng-repeat="user in buscadorCtrl.usersList | filter:buscadorCtrl.repoName" item="item" href="#/app/repos/{{user.login}}">
+            <!--
             <img ng-src="{{user.avatar_url}}">
             <h2>{{user.login}}</h2>
             <p>{{user.html_url}}</p>
+            -->
+            <user-list-drctv>
+            </user-list-drctv>
           </ion-item>
         </ion-list>
 

@@ -11,7 +11,8 @@ angular.module('starter',[
   'favoritosMdle',
   'reposMdle',
   'repoMdle',
-  'homeMdle'
+  'homeMdle',
+  'userListMdle'
 ])
 
 .run(function($ionicPlatform) {

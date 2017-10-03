@@ -28,7 +28,6 @@
 
         <ion-list>
           <ion-item ng-repeat="repo in reposCtrl.userRepos | filter:reposCtrl.repoName" item="item" href="#/app/repo/{{repo.owner.login}}/{{repo.name}}">
-            <img ng-src="{{user.avatar_url}}">
             <h2>{{repo.name}} <span class="item-note">{{repo.public}}</span></h2>
             <p>{{repo.full_name}}</p>
           </ion-item>
