@@ -10,6 +10,10 @@
     function userListDrctv() {
         return {
             restrict: 'E',
+            
+            scope: {
+                usuario: '='
+            },
             templateUrl: 'js/app/directivas/userList/userList.html'
         }
     }
